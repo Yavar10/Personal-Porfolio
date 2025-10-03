@@ -1,3 +1,9 @@
+.about-container{
+height: 100vh;
+}
+/* div{
+  border: 1px solid black;
+} */
 .titleAbout {
   font-size: 150px;
   padding: 0;
@@ -18,7 +24,9 @@
   width: 100vw;      /* take full width */
   height: 175px;    /* enough to contain the large number */
 }
-
+.image-flower{
+position: relative;
+}
 .overlaptxtdn {
   position: absolute;
   bottom: 0;
@@ -40,10 +48,12 @@
 .content-container-about{
   display: flex;
   flex-direction: row;
+  height: 500px;
   justify-content: space-between;
 }
 .content-container-about-left{
   font-size: 25px;
+  padding-left: 20px;
   width: 50%;
 }
 .content-container-about-right{

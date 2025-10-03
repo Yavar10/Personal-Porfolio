@@ -14,7 +14,7 @@ const App = () => {
       let loopEnd = 0;   
 
       const handleLoadedMetadata = () => {
-        loopEnd = video.duration - 5; 
+        loopEnd = video.duration - 5.2; 
       };
 
       const handleTimeUpdate = () => {

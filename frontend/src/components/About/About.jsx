@@ -1,138 +1,98 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+"use client"
+
 import tick from '../../assets/tick.svg'
+import flower from '../../assets/floral.png'
+import { motion } from 'framer-motion'
 import './About.css'
 
 const About = () => {
   return (
-    <div>
+    <div className='about-container'>
       <div className='rightcont'>
-        <motion.div 
-          initial={{ opacity: 0, x: -10 }} 
-          whileInView={{ opacity: 1, x: 10 }} 
-          transition={{ duration: 1 }} 
-          viewport={{ once: true, amount: 0.3 }}
+        <motion.div
           className="titleAbout"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
         >
           About
         </motion.div>
 
         <motion.span 
-          initial={{ opacity: 0, x: 10 }} 
-          whileInView={{ opacity: 1, x: 0 }} 
-          transition={{ duration: 1 }} 
-          viewport={{ once: true, amount: 0.3 }}
           className="overlaptxtup"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
         >
           Creative Vision
         </motion.span>
 
         <motion.span 
-          initial={{ opacity: 0, x: 10 }} 
-          whileInView={{ opacity: 1, x: 0 }} 
-          transition={{ duration: 1 }} 
-          viewport={{ once: true, amount: 0.3 }}
           className="overlaptxtdn"
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
         >
           01
         </motion.span>
       </div>
 
-      <div className="content-container-about">
+      <br />
+      <br />
 
+      <div id='about' className="content-container-about">
         <motion.div 
-          initial={{ opacity: 0, x: -10 }} 
-          whileInView={{ opacity: 1, x: 10 }} 
-          transition={{ delay: 0.2, duration: 1 }} 
-          viewport={{ once: true, amount: 0.2 }}
           className="content-container-about-left"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          <motion.span 
-            initial={{ opacity: 0, x: -10 }} 
-            whileInView={{ opacity: 1, x: 10 }} 
-            transition={{ delay: 0.5, duration: 1 }} 
-            viewport={{ once: true }}
-          >
+          <span>
             Hi, I’m Yavar, a developer who enjoys turning ideas into practical applications. I’m pursuing my B.Tech in IT and exploring how technology solves real problems.
-          </motion.span>
+          </span>
           <br /><br />
-          <motion.span 
-            initial={{ opacity: 0, x: -10 }} 
-            whileInView={{ opacity: 1, x: 10 }} 
-            transition={{ delay: 0.7, duration: 1 }} 
-            viewport={{ once: true }}
-          >
-            I work with JavaScript, Node.js, Express, and MongoDB, building APIs and backend systems while improving my problem-solving through coding platforms.
-          </motion.span>
+          <span>
+           I work with JavaScript, Node.js, Express, and MongoDB, and build interfaces using React, Tailwind CSS, and Framer Motion for smooth, engaging user experiences. I also keep sharpening my problem-solving on coding platforms.</span>
           <br /><br />
-          <motion.span 
-            initial={{ opacity: 0, x: -10 }} 
-            whileInView={{ opacity: 1, x: 10 }} 
-            transition={{ delay: 1, duration: 1 }} 
-            viewport={{ once: true }}
-          >
+          <span>
             Always learning and experimenting, I enjoy reading, writing, and exploring new ideas beyond code.
-          </motion.span>
+          </span>
         </motion.div> 
 
         <motion.div 
-          initial={{ opacity: 0, x: 10 }} 
-          whileInView={{ opacity: 1, x: 0 }} 
-          transition={{ duration: 1 }} 
-          viewport={{ once: true, amount: 0.2 }}
           className="content-container-about-right"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }} 
-            whileInView={{ opacity: 1, x: 0 }} 
-            transition={{ delay: 0.2, duration: 1 }} 
-            viewport={{ once: true }}
-          >  
+          <div>
             Transforming ideas into compelling visual narratives that resonate with audiences.
-          </motion.div>
+          </div>
+
+          <div className='things-about'>
+            {['Design', 'Development', 'Strategy'].map((item, index) => (
+              <motion.div 
+                key={item} 
+                className='col-things-about'
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+              >
+                <span>{item}</span>
+                <img style={{ height: "30px" }} src={tick} alt="" />
+              </motion.div>
+            ))}
+          </div>
 
           <motion.div 
-            initial={{ opacity: 0, x: 20 }} 
-            whileInView={{ opacity: 1, x: 0 }} 
-            transition={{ delay: 0.5, duration: 1 }} 
-            viewport={{ once: true }}
-            className='things-about'
+            className='image-flower'
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
           >
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }} 
-              whileInView={{ opacity: 1, x: 0 }} 
-              transition={{ delay: 0.7, duration: 1 }} 
-              viewport={{ once: true }}
-              className='col-things-about'
-            >
-              <span>Design</span>
-              <img style={{ height: "30px" }} src={tick} alt="" />
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }} 
-              whileInView={{ opacity: 1, x: 0 }} 
-              transition={{ delay: 0.9, duration: 1 }} 
-              viewport={{ once: true }}
-              className='col-things-about'
-            >
-              <span>Development</span>
-              <img style={{ height: "30px" }} src={tick} alt="" />
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }} 
-              whileInView={{ opacity: 1, x: 0 }} 
-              transition={{ delay: 1.1, duration: 1 }} 
-              viewport={{ once: true }}
-              className='col-things-about'
-            >
-              <span>Strategy</span>
-              <img style={{ height: "30px" }} src={tick} alt="" />
-            </motion.div>
+            <img style={{ height:"250px", position:"absolute", right:"0px" }} src={flower} alt="" />
           </motion.div>
         </motion.div>
-
       </div>
     </div>
   )
