@@ -1,0 +1,67 @@
+.titleAbout {
+  font-size: 150px;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+}
+/* div{
+  border: solid 1px  black;
+} */
+.rightcont {
+  position: relative;  
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: flex-end;
+  width: 100vw;      /* take full width */
+  height: 175px;    /* enough to contain the large number */
+}
+
+.overlaptxtdn {
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+  z-index: 1;
+  font-size: 70px;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.overlaptxtup {
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
+  z-index: 2;
+  font-size: 40px;
+  color: black;
+}
+
+.content-container-about{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.content-container-about-left{
+  font-size: 25px;
+  width: 50%;
+}
+.content-container-about-right{
+    font-size: 20px;
+    width: 50%;
+}
+.things-about{
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    margin-top: 7%;
+    align-items: center;
+  }
+  .col-things-about{
+    width: 70%;
+    margin-top: 2%;
+    border-bottom: 1px grey solid;
+display: flex;
+justify-content: space-between;
+}
