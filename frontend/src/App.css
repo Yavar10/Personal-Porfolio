@@ -35,8 +35,25 @@ body::-webkit-scrollbar {
 .content {
   position: relative;
   z-index: 1;
-  
   color: white;
   text-align: center;
   padding-top: 40vh;
+}
+.close-marquee{
+  height: 100%;
+  width:2%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+}
+.under-construction {
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
+  border-top: 5px dashed black;
+  border-bottom: 5px dashed black;
+  color: black;
+  font-weight: bolder;
 }

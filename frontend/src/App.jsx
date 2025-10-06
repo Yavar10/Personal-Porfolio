@@ -1,10 +1,12 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import "./App.css"
 import NavBar from './components/NavBar/NavBar'
+import x from "./assets/x.svg"
 import About from './components/About/About';
 
 const App = () => {
   const videoRef = useRef(null);
+  const [closeMark,setCloseMark]=useState("flex");
 
   useEffect(() => {
     const video = videoRef.current;
@@ -36,8 +38,12 @@ const App = () => {
 
   return (
     <div className='main-container-home-page app'>
+        <div style={{display:`${closeMark}`}} className='under-construction'>
+          <marquee behavior="infinite" direction="left">Under-Construction</marquee>
+          <div className='close-marquee'><img onClick={()=>{setCloseMark("none")}} style={{ height:"100%",width:"100%"}} src={x} alt="" /></div>
+        </div>
         <NavBar />
-      <div>
+      <div >
         <video
         ref={videoRef}
         autoPlay
