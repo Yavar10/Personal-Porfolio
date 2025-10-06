@@ -1,12 +1,13 @@
-import React, { useRef, useEffect, useState } from 'react'
-import "./App.css"
-import NavBar from './components/NavBar/NavBar'
-import x from "./assets/x.svg"
+import { useEffect, useRef, useState } from 'react';
+import "./App.css";
+import x from "./assets/x.svg";
 import About from './components/About/About';
+import NavBar from './components/NavBar/NavBar';
 
 const App = () => {
   const videoRef = useRef(null);
   const [closeMark,setCloseMark]=useState("flex");
+  const [isVideoLoading, setIsVideoLoading] = useState(true);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -28,10 +29,14 @@ const App = () => {
 
       video.addEventListener("loadedmetadata", handleLoadedMetadata);
       video.addEventListener("timeupdate", handleTimeUpdate);
+      video.addEventListener("playing", () => setIsVideoLoading(false));
+      video.addEventListener("waiting", () => setIsVideoLoading(true));
 
       return () => {
         video.removeEventListener("loadedmetadata", handleLoadedMetadata);
         video.removeEventListener("timeupdate", handleTimeUpdate);
+        video.removeEventListener("playing", () => setIsVideoLoading(false));
+        video.removeEventListener("waiting", () => setIsVideoLoading(true));
       };
     }
   }, []);
@@ -43,17 +48,22 @@ const App = () => {
           <div className='close-marquee'><img onClick={()=>{setCloseMark("none")}} style={{ height:"100%",width:"100%"}} src={x} alt="" /></div>
         </div>
         <NavBar />
-      <div >
+      <div className="video-container">
+        {isVideoLoading && (
+          <div className="video-loading">
+            Loading video...
+          </div>
+        )}
         <video
-        ref={videoRef}
-        autoPlay
-        muted
-        playsInline
-        className="bg-video">
-        <source src="/ChatGPT  The Intelligence Age - OpenAI (1080p, h264).mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-        </div>
+          ref={videoRef}
+          autoPlay
+          muted
+          playsInline
+          className="bg-video">
+          <source src="/ChatGPT  The Intelligence Age - OpenAI (1080p, h264).mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <About/>
     </div>
   )
