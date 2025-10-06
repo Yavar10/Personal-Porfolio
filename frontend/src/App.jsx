@@ -65,6 +65,8 @@ const App = () => {
         </video>
       </div>
       <About/>
+      <br />
+      <br />
     </div>
   )
 }
