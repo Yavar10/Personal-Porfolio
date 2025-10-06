@@ -3,6 +3,7 @@ import "./App.css";
 import x from "./assets/x.svg";
 import About from './components/About/About';
 import NavBar from './components/NavBar/NavBar';
+import Work from './components/Work/Work';
 
 const App = () => {
   const videoRef = useRef(null);
@@ -67,6 +68,7 @@ const App = () => {
       <About/>
       <br />
       <br />
+      <Work/>
     </div>
   )
 }
