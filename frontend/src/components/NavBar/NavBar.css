@@ -1,29 +1,223 @@
-.nav-container{
-width: 100%;
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-position: sticky;
-top: 0px;
-text-shadow:0px 0px 10px black;
-background-color: black;
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-border-bottom: 1px solid rgb(255, 255, 255);
-color: aliceblue;
-}
-.LogoText{
-margin: 20px;
-font-size: 30px;
-font-family: monospace;
-}
-.navOptions{
+.nav-container {
+    width: 100%;
     display: flex;
-    font-size: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    text-shadow: 0px 0px 10px black;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: aliceblue;
+    z-index: 1000;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.LogoText {
+    margin: 20px;
+    font-size: clamp(1.25rem, 4vw, 30px);
     font-family: monospace;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-gap: 10px;
-margin: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.navOptions {
+    display: flex;
+    font-size: clamp(0.875rem, 2.5vw, 20px);
+    font-family: monospace;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    margin: 10px;
+    flex-wrap: wrap;
+}
+
+.navOptions a,
+.navOptions button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    text-decoration: none;
+    color: aliceblue;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* Tablet devices */
+@media screen and (max-width: 1024px) {
+    .nav-container {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .LogoText {
+        margin: 15px;
+        font-size: clamp(1.125rem, 3.5vw, 26px);
+    }
+
+    .navOptions {
+        gap: clamp(0.4rem, 1.5vw, 0.75rem);
+        margin: 8px;
+    }
+}
+
+/* Medium devices */
+@media screen and (max-width: 768px) {
+    .nav-container {
+        padding: 0.5rem;
+    }
+
+    .LogoText {
+        margin: 12px 8px;
+        font-size: clamp(1rem, 4vw, 22px);
+    }
+
+    .navOptions {
+        font-size: clamp(0.75rem, 2.5vw, 16px);
+        gap: 0.5rem;
+        margin: 8px 4px;
+    }
+
+    .navOptions a,
+    .navOptions button {
+        padding: 0.4rem 0.75rem;
+    }
+}
+
+/* Small devices */
+@media screen and (max-width: 640px) {
+    .nav-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0.5rem 0.25rem;
+    }
+
+    .LogoText {
+        margin: 10px 8px;
+        font-size: clamp(0.875rem, 5vw, 20px);
+        width: 100%;
+        text-align: center;
+    }
+
+    .navOptions {
+        width: 100%;
+        justify-content: center;
+        gap: 0.5rem;
+        margin: 5px;
+        padding-bottom: 0.5rem;
+    }
+
+    .navOptions a,
+    .navOptions button {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+    .nav-container {
+        padding: 0.5rem 0.25rem;
+    }
+
+    .LogoText {
+        margin: 8px;
+        font-size: clamp(0.875rem, 5vw, 18px);
+    }
+
+    .navOptions {
+        gap: 0.375rem;
+        margin: 4px;
+    }
+
+    .navOptions a,
+    .navOptions button {
+        padding: 0.375rem 0.5rem;
+        font-size: 0.8125rem;
+    }
+}
+
+/* Very small devices - hamburger menu alternative */
+@media screen and (max-width: 380px) {
+    .navOptions {
+        gap: 0.25rem;
+    }
+
+    .navOptions a,
+    .navOptions button {
+        padding: 0.35rem 0.4rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* Large desktop */
+@media screen and (min-width: 1440px) {
+    .nav-container {
+        padding: 0.75rem 2rem;
+    }
+
+    .LogoText {
+        margin: 24px;
+        font-size: 32px;
+    }
+
+    .navOptions {
+        gap: 1.5rem;
+        margin: 12px;
+        font-size: 22px;
+    }
+}
+
+/* Landscape orientation on small screens */
+@media screen and (max-width: 900px) and (orientation: landscape) {
+    .nav-container {
+        padding: 0.25rem 0.5rem;
+    }
+
+    .LogoText {
+        margin: 8px;
+        font-size: clamp(0.875rem, 3vh, 18px);
+    }
+
+    .navOptions {
+        margin: 4px;
+        gap: 0.5rem;
+    }
+
+    .navOptions a,
+    .navOptions button {
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+/* Scrolled state - optional enhancement */
+.nav-container.scrolled {
+    background-color: rgba(0, 0, 0, 0.98);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .nav-container,
+    .navOptions a,
+    .navOptions button {
+        transition: none;
+    }
+
+    .navOptions a:hover,
+    .navOptions button:hover,
+    .navOptions a:active,
+    .navOptions button:active {
+        transform: none;
+    }
 }

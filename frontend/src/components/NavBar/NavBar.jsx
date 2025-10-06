@@ -9,7 +9,7 @@ const NavBar = () => {
       <div className="navOptions">
         <div><a style={{ color: "inherit", textDecoration: "none" }} href="#home">Home</a></div>
         <div><a style={{ color: "inherit", textDecoration: "none" }} href="#about">About</a></div>
-        <div>Work</div>
+        <div><a style={{ color: "inherit", textDecoration: "none" }} href="#work">Work</a></div>
         <div>Contact</div>
         </div>
     </div>

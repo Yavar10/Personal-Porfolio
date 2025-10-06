@@ -31,7 +31,7 @@ const Work = () => {
             image: netflix,
             description: "Netflix clone with modern features",
             github: "https://github.com/Yavar10/Netflix",
-            demo: "https://anonymous-messages-dashboard-user-v.vercel.app",
+            demo: "https://netflix-zeta-sage.vercel.app/",
         },
         {
             id: 4,

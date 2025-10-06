@@ -1,13 +1,19 @@
-
-body{
+body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body::-webkit-scrollbar {
   display: none;  
 }
+
 .app {
   position: relative;
   width: 100%;
@@ -19,6 +25,7 @@ body::-webkit-scrollbar {
   position: relative;
   width: 100%;
   height: 100vh;
+  min-height: 100svh; /* Better mobile viewport support */
 }
 
 .video-loading {
@@ -31,42 +38,53 @@ body::-webkit-scrollbar {
   padding: 1rem 2rem;
   border-radius: 4px;
   z-index: 1;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  white-space: nowrap;
 }
 
 .bg-video {
   width: 100%;
-  height: 100vh;       
+  height: 100vh;
+  min-height: 100svh;
   object-fit: cover;  
   display: block;
-  position: relative; 
-  z-index: 0;         
+  position: relative;
+  z-index: 0;        
 }
-
 
 .main-container-home-page {
   position: relative;
   width: 100%;
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
 }
+
 .content {
   position: relative;
   z-index: 1;
   color: white;
   text-align: center;
   padding-top: 40vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
-.close-marquee{
+
+.close-marquee {
   height: 100%;
-  width:2%;
+  width: 2%;
+  min-width: 30px; /* Ensure minimum touchable size */
   border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 2px;
+  cursor: pointer;
 }
+
 .under-construction {
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: yellow;
@@ -74,4 +92,69 @@ body::-webkit-scrollbar {
   border-bottom: 5px dashed black;
   color: black;
   font-weight: bolder;
+  padding: 1rem;
+  font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+}
+
+/* Tablet breakpoint */
+@media screen and (max-width: 768px) {
+  .content {
+    padding-top: 30vh;
+  }
+  
+  .close-marquee {
+    width: 5%;
+    min-width: 40px;
+  }
+  
+  .under-construction {
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    padding: 0.75rem;
+  }
+}
+
+/* Mobile breakpoint */
+@media screen and (max-width: 480px) {
+  .content {
+    padding-top: 25vh;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .video-loading {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .close-marquee {
+    width: 8%;
+    min-width: 44px; /* iOS minimum touch target */
+  }
+  
+  .under-construction {
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Landscape mobile */
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  .content {
+    padding-top: 15vh;
+  }
+  
+  .bg-video {
+    height: 100vh;
+  }
+}
+
+/* Large desktop */
+@media screen and (min-width: 1920px) {
+  .close-marquee {
+    width: 1.5%;
+    min-width: 35px;
+  }
 }

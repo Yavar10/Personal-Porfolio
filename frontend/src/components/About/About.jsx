@@ -9,9 +9,9 @@ const About = () => {
   return (
     <div className='about-container'>
       <div className='rightcont'>
-        <motion.div
+        <motion.div id='about'
           className="titleAbout"
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -200 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
@@ -40,7 +40,7 @@ const About = () => {
       <br />
       <br />
 
-      <div id='about' className="content-container-about">
+      <div  className="content-container-about">
         <motion.div 
           className="content-container-about-left"
           initial={{ opacity: 0, x: -50 }}
