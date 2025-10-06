@@ -67,7 +67,6 @@ const App = () => {
       </div>
       <About/>
       <br />
-      <br />
       <Work/>
     </div>
   )

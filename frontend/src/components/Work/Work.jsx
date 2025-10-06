@@ -21,7 +21,7 @@ const Work = () => {
             id: 2,
             title: "Lavender",
             image: lavender,
-            description: "Lavender project description",
+            description: "Lavender Chatbot using Gemini API",
             github: "https://github.com/Yavar10/Lavender-ChatBot",
             demo: "https://lavender-ashy.vercel.app/",
         },
