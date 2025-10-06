@@ -66,7 +66,6 @@ const App = () => {
         </video>
       </div>
       <About/>
-      <br />
       <Work/>
     </div>
   )
