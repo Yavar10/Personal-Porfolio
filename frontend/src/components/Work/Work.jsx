@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import './Work.css';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import anonyChirp from '../../assets/anonyChirp.png';
@@ -8,6 +8,13 @@ import netflix from '../../assets/netflix.png';
 import Notehousery from '../../assets/Notehousery.png';
 
 const Work = () => {
+    const [hoveredImage, setHoveredImage] = useState(null);
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    const handleMouseMove = (e) => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
     const projects = [
         {
             id: 1,
@@ -69,7 +76,14 @@ const Work = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1 }}
                              className="work__card" key={project.id}>
-                        <img src={project.image} alt={project.title} className="work__img" />
+                        <div 
+                            className="work__img-wrapper"
+                            onMouseEnter={() => setHoveredImage(project.image)}
+                            onMouseLeave={() => setHoveredImage(null)}
+                            onMouseMove={handleMouseMove}
+                        >
+                            <img src={project.image} alt={project.title} className="work__img" />
+                        </div>
                         <h3 className="work__name">{project.title}</h3>
                         <p className="work__description">{project.description}</p>
                         <div className="work__links">
@@ -92,6 +106,24 @@ const Work = () => {
                     </motion.div>
                 ))}
             </div>
+
+            <AnimatePresence>
+                {hoveredImage && (
+                    <motion.div 
+                        className="work__img-preview"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.8 }}
+                        transition={{ duration: 0.2 }}
+                        style={{
+                            left: `${mousePosition.x + 20}px`,
+                            top: `${mousePosition.y + 20}px`,
+                        }}
+                    >
+                        <img src={hoveredImage} alt="Preview" />
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 };
