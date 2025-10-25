@@ -1,12 +1,19 @@
-import React from 'react'
+import './Footer.css';
+import { motion } from 'framer-motion';
+import ContactMe from '../ContactMe/Contact';
 
-const Footer = () => {
+function Footer() {
   return (
-    <div style={{backgroundColor:"black",position:"relative",height:"800px",display:"flex",alignItems:"center"}}>
-      <div style={{color:"white",position:"absolute",fontSize:"500px",zIndex:"0"}}>2025</div>
-      <div style={{width:"100%", background: "linear-gradient(to right, black 0%,rgba(0,0,0,0.8) 50%, rgba(0,0,0,0) 100%)",color:"white",position:"absolute",fontSize:"50px",zIndex:"1"}}>© Mohd Yavar</div>
+   <div> <div className="footer-container">
+      <motion.div initial={{ opacity: 0, x: 1000 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 2 }} className="footer-year">2025</motion.div>
+      <div className="footer-text">© Mohd Yavar</div>
+   
     </div>
-  )
+       <ContactMe/>
+    </div>
+  );
 }
 
-export default Footer
+export default Footer;
