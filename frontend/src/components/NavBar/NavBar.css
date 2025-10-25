@@ -1,3 +1,6 @@
+/* div{
+    border: 1px white solid;
+} */
 .nav-container {
     width: 100%;
     display: flex;
@@ -16,8 +19,25 @@
     padding: 0.5rem 1rem;
     transition: all 0.3s ease;
 }
-
-.LogoText {
+.link-icon-leetcode:hover {
+    color: #f79f1f;
+    transform: scale(1.1);
+    rotate: 20deg;
+    transition: all 0.3s ease;
+}
+.link-icon-linkedin:hover {
+    color: #0077b5; 
+    rotate: -20deg;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+.link-icon-github:hover {
+    color: #ffffff; 
+    transform: scale(1.1);
+    rotate: 20deg;
+    transition: all 0.3s ease;
+}
+.LogoTextContainer {
     margin: 20px;
     font-size: clamp(1.25rem, 4vw, 30px);
     font-family: monospace;

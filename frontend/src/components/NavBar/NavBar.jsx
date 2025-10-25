@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import "./NavBar.css";
+import { SiLeetcode,SiLinkedin,SiGithub } from 'react-icons/si';
 
 const NavBar = () => {
   const originalText = "Yavar";
@@ -36,7 +37,6 @@ const NavBar = () => {
   };
 
   const handleMouseLeave = () => {
-    // Stop any running animation and reset the text
     clearInterval(intervalRef.current);
     setDisplayedText(originalText);
   };
@@ -45,11 +45,19 @@ const NavBar = () => {
     <>
       <div id='home' className='nav-container'>
         <div
-          className="LogoText"
-          onMouseOver={handleMouseOver}
-          onMouseLeave={handleMouseLeave}
+        style={{display:"flex",justifyContent:"space-between",width:"20%",alignItems:"center"}}
+          className="LogoTextContainer"
+        
         >
+         <div
+           onMouseOver={handleMouseOver}
+          onMouseLeave={handleMouseLeave}>
           {displayedText}
+</div>           
+         <a target='-blank' href="https://leetcode.com/u/zuri10"><SiLeetcode className='link-icon-leetcode' style={{ gap:"15px" }} /></a> 
+          <a target='-blank' href="https://www.linkedin.com/in/mohdyavar/"><SiLinkedin className='link-icon-linkedin' style={{ gap:"15px" }} /></a>
+          <a target='_blank' href="https://github.com/Yavar10"><SiGithub className='link-icon-github' style={{ gap:"15px" }} /></a>
+
         </div>
         <div className="navOptions">
           <div><a style={{ color: "inherit", textDecoration: "none" }} href="#home">Home</a></div>
