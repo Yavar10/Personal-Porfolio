@@ -9,7 +9,7 @@ const About = () => {
   return (
     <div className='about-container'>
       <div className='rightcont'>
-        <motion.div id='about'
+        <motion.div 
           className="titleAbout"
           initial={{ opacity: 0, y: -200 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -17,6 +17,7 @@ const About = () => {
         >
           About
         </motion.div>
+        <div id='about'></div>
 
         <motion.span 
           className="overlaptxtup"

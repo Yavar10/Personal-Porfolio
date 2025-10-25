@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import "./NavBar.css";
-import { SiLeetcode,SiLinkedin,SiGithub } from 'react-icons/si';
+import { SiLeetcode,SiLinkedin,SiGithub, SiPokemon } from 'react-icons/si';
+import theme from "../../assets/01. Main Theme.mp3"
 
 const NavBar = () => {
   const originalText = "Yavar";
@@ -8,6 +9,13 @@ const NavBar = () => {
 
   const [displayedText, setDisplayedText] = useState(originalText);
   const intervalRef = useRef(null);
+  const audio = new Audio(theme);
+
+  const playtheme=()=>{
+    audio.volume=0.01;
+    audio.loop = true;
+    audio.play();
+}
 
   const handleMouseOver = () => {
     let iteration = 0;
@@ -57,6 +65,7 @@ const NavBar = () => {
          <a target='-blank' href="https://leetcode.com/u/zuri10"><SiLeetcode className='link-icon-leetcode' style={{ gap:"15px" }} /></a> 
           <a target='-blank' href="https://www.linkedin.com/in/mohdyavar/"><SiLinkedin className='link-icon-linkedin' style={{ gap:"15px" }} /></a>
           <a target='_blank' href="https://github.com/Yavar10"><SiGithub className='link-icon-github' style={{ gap:"15px" }} /></a>
+          <div onClick={()=>{playtheme()}} ><SiPokemon className='link-icon-poke' style={{height:"50px", width:"50px", gap:"15px" }} /></div>
 
         </div>
         <div className="navOptions">
