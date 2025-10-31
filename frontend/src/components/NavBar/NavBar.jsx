@@ -12,7 +12,7 @@ const NavBar = () => {
   const audio = new Audio(theme);
 
   const playtheme=()=>{
-    audio.volume=0.01;
+    audio.volume=0.1;
     audio.loop = true;
     audio.play();
 }

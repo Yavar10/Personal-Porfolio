@@ -148,7 +148,7 @@ const Work = () => {
                                 altText={project.title}
                                 captionText={project.title}
                                 containerHeight="400px"
-                                containerWidth="400px"
+                                containerWidth="600px"
                                 imageHeight="300px"
                                 imageWidth="100%"
                                 rotateAmplitude={8}
