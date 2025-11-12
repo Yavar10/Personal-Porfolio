@@ -84,10 +84,10 @@ export default function Contact() {
               <h3 className="text-2xl font-semibold tracking-tight mb-8">Connect With Me</h3>
               <div className="space-y-4">
                 {[
-                  { icon: Github, label: 'GitHub', handle: '@Yavar10' },
-                  { icon: Linkedin, label: 'LinkedIn', handle: '/in/mohdyavar' },
-                  { icon: Twitter, label: 'Twitter', handle: '@yavar10_' },
-                  { icon: Mail, label: 'Email', handle: 'zuri00014@gmail.com' },
+                  { icon: Github, label: 'GitHub', handle: '@Yavar10',link:"https://www.github.com/Yavar10" },
+                  { icon: Linkedin, label: 'LinkedIn', handle: '/in/mohdyavar',link:"https://www.linkedin.com/in/mohdyavar" },
+                  { icon: Twitter, label: 'Twitter', handle: '@yavar10_',link:"https://www.x.com/yavar10_" },
+                  { icon: Mail, label: 'Email', handle: 'zuri00014@gmail.com',link:"" },
                 ].map((social, i) => (
                   <SocialLink key={social.label} social={social} delay={i * 100} inView={isInView} />
                 ))}
@@ -241,11 +241,12 @@ function CopyableEmail({ email }) {
 
 function SocialLink({ social, delay, inView }) {
   const Icon = social.icon;
+  const Link=social.link;
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <a
-      href="#"
+      href={Link}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={`flex items-center gap-4 p-4 border border-black/20 group hover:border-black transition-all relative overflow-hidden ${
