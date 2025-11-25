@@ -53,19 +53,20 @@ const NavBar = () => {
     <>
       <div id='home' className='nav-container'>
         <div
-        style={{display:"flex",justifyContent:"space-between",width:"20%",alignItems:"center"}}
-          className="LogoTextContainer"
+          className="LogoTextContainer flex flex-col sm:flex-row justify-between items-center"
         
         >
          <div
            onMouseOver={handleMouseOver}
           onMouseLeave={handleMouseLeave}>
           {displayedText}
-</div>           
+          </div>
+          <div className='flex items-center justify-center gap-3'>
          <a target='-blank' href="https://leetcode.com/u/zuri10"><SiLeetcode className='link-icon-leetcode' style={{ gap:"15px" }} /></a> 
           <a target='-blank' href="https://www.linkedin.com/in/mohdyavar/"><SiLinkedin className='link-icon-linkedin' style={{ gap:"15px" }} /></a>
           <a target='_blank' href="https://github.com/Yavar10"><SiGithub className='link-icon-github' style={{ gap:"15px" }} /></a>
           <div onClick={()=>{playtheme()}} ><SiPokemon className='link-icon-poke' style={{height:"50px", width:"50px", gap:"15px" }} /></div>
+          </div>
 
         </div>
         <div className="navOptions">
