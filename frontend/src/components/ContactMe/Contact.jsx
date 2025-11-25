@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { Mail, Github, Linkedin, Twitter, Send, Copy, Check } from "lucide-react";
+import { Mail, Github, Linkedin, Twitter, Send, Copy, Check, Instagram } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
@@ -107,8 +107,9 @@ export default function Contact() {
                 {[
                   { icon: Github, label: "GitHub", handle: "@Yavar10", link: "https://github.com/Yavar10" },
                   { icon: Linkedin, label: "LinkedIn", handle: "/in/mohdyavar", link: "https://www.linkedin.com/in/mohdyavar" },
-                  { icon: Twitter, label: "Twitter", handle: "@yavar10_", link: "https://www.x.com/yavar10_" },
                   { icon: Mail, label: "Email", handle: "zuri00014@gmail.com", link: "" },
+                  { icon: Twitter, label: "Twitter", handle: "@yavar10_", link: "https://www.x.com/yavar10_" },
+                  { icon: Instagram, label: "Instagram", handle: "@yavar_14_", link: "https://www.instagram.com/yavar_14_" },
                 ].map((social, i) => (
                   <SocialLink key={social.label} social={social} delay={i * 100} inView={isInView} />
                 ))}
