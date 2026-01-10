@@ -19,7 +19,7 @@ function Footer() {
           transition={{ duration: 1.2 }}
           className="footer-year"
         >
-          2025
+          2026
         </motion.div>
 
         <div className="footer-text">© Mohd Yavar</div>
