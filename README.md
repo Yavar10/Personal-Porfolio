@@ -50,7 +50,7 @@ A modern, video-enhanced portfolio website built with React, featuring smooth an
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/portfolio.git
+git clone https://github.com/yavar10/portfolio.git
 cd portfolio
 ```
 
@@ -134,9 +134,9 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 **Your Name**
 
-- Website: [yourwebsite.com](https://yourwebsite.com)
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [@yourprofile](https://linkedin.com/in/yourprofile)
+- Website: [yavar-taupe.vercel.app](https://yavar-taupe.vercel.app)
+- GitHub: [@yavar10](https://github.com/Yavar10/)
+- LinkedIn: [@mohdyavar](https://linkedin.com/in/mohdyavar)
 
 ## ⭐ Show your support
 
