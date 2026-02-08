@@ -123,7 +123,7 @@ const Work = () => {
                         </motion.div>
                         <motion.div 
                             className="work-title-part"
-                          initial={{ opacity: 0, x: 200 }}
+                          initial={{ opacity: 0, x: 180 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0 }}
