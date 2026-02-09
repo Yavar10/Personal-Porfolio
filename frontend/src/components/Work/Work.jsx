@@ -8,6 +8,10 @@ import anonyChirp from '../../assets/anonyChirp.png';
 import lavender from '../../assets/lavender.png';
 import netflix from '../../assets/netflix.png';
 import Notehousery from '../../assets/Notehousery.png';
+import PokeLink from '../../assets/poke-sim.png';
+import TwoOfUs from '../../assets/TwoOfUs.png';
+import Leetrem from '../../assets/Leetrem.png';
+import FarmVision from '../../assets/FarmVision.png';
 
 const Work = () => {
     const projects = [
@@ -30,7 +34,7 @@ const Work = () => {
             title: "Netflix Clone", 
             image: netflix, 
             github: "https://github.com/Yavar10/Netflix", 
-            demo: "https://netflix-zeta-sage.vercel.app/" 
+            demo: "https://netflix-zeta-sage.vercel.app/Home" 
         },
         { 
             id: 4, 
@@ -38,6 +42,34 @@ const Work = () => {
             image: Notehousery, 
             github: "https://github.com/Yavar10/Stuff-i-made-leaning-react", 
             demo: "https://stuff-i-made-leaning-react.vercel.app" 
+        },
+        { 
+            id: 5, 
+            title: "Poke-Link", 
+            image: PokeLink, 
+            github: "https://github.com/Yavar10/Poke-sim", 
+            demo: "https://poke-sim.vercel.app" 
+        },
+        { 
+            id: 6, 
+            title: "2 of Us", 
+            image: TwoOfUs, 
+            github: "https://github.com/Yavar10/webSockets/tree/main/dm", 
+            demo: "https://web-sockets-demo-two.vercel.app" 
+        },
+        { 
+            id: 7, 
+            title: "Leetrem", 
+            image: Leetrem, 
+            github: "https://github.com/Yavar10/LC-rem", 
+            demo: "https://leetrem.vercel.app" 
+        },
+        { 
+            id: 8, 
+            title: "FarmVision", 
+            image: FarmVision, 
+            github: "https://github.com/Yavar10/Innotech25", 
+            demo: "https://innotech25-phi.vercel.app" 
         },
     ];
 
