@@ -14,7 +14,10 @@ const NavBar = () => {
   const playtheme=()=>{
     audio.volume=0.1;
     audio.loop = true;
+    if(audio.paused)
     audio.play();
+  else
+    audio.pause();
 }
 
   const handleMouseOver = () => {
