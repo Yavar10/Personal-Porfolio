@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react';
+import { useRef, useState } from 'react';
+import { SiGithub, SiLeetcode, SiLinkedin, SiPokemon } from 'react-icons/si';
+import theme from "../../assets/01. Main Theme.mp3";
 import "./NavBar.css";
-import { SiLeetcode,SiLinkedin,SiGithub, SiPokemon } from 'react-icons/si';
-import theme from "../../assets/01. Main Theme.mp3"
 
 const NavBar = () => {
   const originalText = "Yavar";

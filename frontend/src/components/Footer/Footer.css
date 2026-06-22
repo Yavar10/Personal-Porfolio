@@ -12,6 +12,7 @@
   font-size: 500px;
   z-index: 0;
 }
+
 @media (max-width: 600px) {
   .footer-container {
     height: 500px;
@@ -21,13 +22,15 @@
 /* Mobile responsive */
 @media (max-width: 600px) {
   .footer-year {
-    font-size: 200px;  /* or adjust */
+    font-size: 200px;
+    /* or adjust */
     left: 0;
     right: 0;
   }
 
   .footer-container {
-    height: 400px; /* smaller footer so it can visibly scroll */
+    height: 400px;
+    /* smaller footer so it can visibly scroll */
   }
 
   .footer-text {
@@ -37,12 +40,10 @@
 
 .footer-text {
   width: 100%;
-  background: linear-gradient(
-    to right,
-    black 0%,
-    rgba(0, 0, 0, 0.8) 50%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: linear-gradient(to right,
+      black 0%,
+      rgba(0, 0, 0, 0.8) 50%,
+      rgba(0, 0, 0, 0) 100%);
   color: white;
   position: absolute;
   font-size: 50px;

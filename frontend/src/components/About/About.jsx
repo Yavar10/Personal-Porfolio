@@ -1,8 +1,8 @@
 "use client"
 
-import tick from '../../assets/tick.svg'
-import flower from '../../assets/floral.png'
 import { motion } from 'framer-motion'
+import flower from '../../assets/floral.png'
+import tick from '../../assets/tick.svg'
 import './About.css'
 
 const About = () => {

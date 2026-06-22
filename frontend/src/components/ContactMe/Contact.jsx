@@ -1,6 +1,6 @@
-import { useRef, useState, useEffect } from "react";
-import { Mail, Github, Linkedin, Twitter, Send, Copy, Check, Instagram } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import { Check, Copy, Github, Instagram, Linkedin, Mail, Send, Twitter } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Contact() {
   const sectionRef = useRef(null);

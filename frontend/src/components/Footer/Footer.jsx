@@ -1,8 +1,8 @@
 
-import './Footer.css';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { useInView, motion } from 'framer-motion';
 import ContactMe from '../ContactMe/Contact';
+import './Footer.css';
 
 function Footer() {
   const ref = useRef(null);

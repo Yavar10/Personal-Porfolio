@@ -1,17 +1,16 @@
-import React from 'react';
-import './Work.css';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import TiltedCard from '../ui/TiltedCard/TiltedCard';
-import Particles from '../ui/Particles/Particles';
 import { motion } from 'framer-motion';
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import anonyChirp from '../../assets/anonyChirp.png';
+import FarmVision from '../../assets/FarmVision.png';
 import lavender from '../../assets/lavender.png';
+import Leetrem from '../../assets/Leetrem.png';
 import netflix from '../../assets/netflix.png';
 import Notehousery from '../../assets/Notehousery.png';
 import PokeLink from '../../assets/poke-sim.png';
 import TwoOfUs from '../../assets/TwoOfUs.png';
-import Leetrem from '../../assets/Leetrem.png';
-import FarmVision from '../../assets/FarmVision.png';
+import Particles from '../ui/Particles/Particles';
+import TiltedCard from '../ui/TiltedCard/TiltedCard';
+import './Work.css';
 
 const Work = () => {
     const projects = [

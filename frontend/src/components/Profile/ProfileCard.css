@@ -47,11 +47,9 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(
-    circle at var(--pointer-x) var(--pointer-y),
-    var(--behind-glow-color) 0%,
-    transparent var(--behind-glow-size)
-  );
+  background: radial-gradient(circle at var(--pointer-x) var(--pointer-y),
+      var(--behind-glow-color) 0%,
+      transparent var(--behind-glow-size));
   filter: blur(40px);
   opacity: calc(0.3 * var(--card-opacity));
   transition: opacity 200ms ease;
@@ -67,14 +65,13 @@
   max-height: 480px;
   display: grid;
   aspect-ratio: 0.75;
-  border-radius: var(--card-radius);
+  border-radius: 8px;
+  /* Sharper */
   position: relative;
   background-blend-mode: normal;
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.4),
-    0 0 1px rgba(255, 255, 255, 0.1),
-    inset 0 0 40px rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  /* Cleaner border */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
   transition: transform 1s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   transform: translateZ(0) rotateX(0deg) rotateY(0deg);
   background: #000000;
@@ -86,10 +83,7 @@
 .pc-card.active {
   transition: none;
   transform: translateZ(0) rotateX(var(--rotate-y)) rotateY(var(--rotate-x));
-  box-shadow: 
-    0 40px 100px rgba(0, 0, 0, 0.5),
-    0 0 2px rgba(255, 255, 255, 0.2),
-    inset 0 0 60px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
   border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -130,8 +124,15 @@
 }
 
 @keyframes subtle-shimmer {
-  0%, 100% { filter: brightness(0.4) contrast(1.1) opacity(0.15); }
-  50% { filter: brightness(0.5) contrast(1.2) opacity(0.2); }
+
+  0%,
+  100% {
+    filter: brightness(0.4) contrast(1.1) opacity(0.15);
+  }
+
+  50% {
+    filter: brightness(0.5) contrast(1.2) opacity(0.2);
+  }
 }
 
 .pc-shine,
@@ -145,18 +146,14 @@
   background-size: cover;
   background-position: center;
   background-image:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       rgba(255, 255, 255, 0.08) 0%,
       rgba(255, 255, 255, 0.04) 50%,
-      rgba(0, 0, 0, 0.12) 100%
-    ),
-    radial-gradient(
-      farthest-corner circle at var(--pointer-x) var(--pointer-y),
+      rgba(0, 0, 0, 0.12) 100%),
+    radial-gradient(farthest-corner circle at var(--pointer-x) var(--pointer-y),
       rgba(255, 255, 255, 0.08) 12%,
       rgba(0, 0, 0, 0.08) 20%,
-      rgba(0, 0, 0, 0.15) 120%
-    );
+      rgba(0, 0, 0, 0.15) 120%);
   background-position:
     0 0,
     center;
@@ -192,12 +189,10 @@
 
 .pc-shine::before {
   background-image:
-    linear-gradient(
-      45deg,
+    linear-gradient(45deg,
       rgba(255, 255, 255, 0.1) 0%,
       rgba(255, 255, 255, 0.05) 50%,
-      rgba(0, 0, 0, 0.1) 100%
-    ),
+      rgba(0, 0, 0, 0.1) 100%),
     radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(255, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0.05) 90%),
     var(--grain);
   background-size:
@@ -227,11 +222,9 @@
 .pc-glare {
   transform: translate3d(0, 0, 1.1px);
   overflow: hidden;
-  background-image: radial-gradient(
-    farthest-corner circle at var(--pointer-x) var(--pointer-y),
-    rgba(255, 255, 255, 0.12) 12%,
-    rgba(0, 0, 0, 0.2) 90%
-  );
+  background-image: radial-gradient(farthest-corner circle at var(--pointer-x) var(--pointer-y),
+      rgba(255, 255, 255, 0.12) 12%,
+      rgba(0, 0, 0, 0.2) 90%);
   mix-blend-mode: soft-light;
   filter: brightness(0.98) contrast(1.1);
   z-index: 4;
@@ -249,8 +242,7 @@
   position: absolute;
   left: 50%;
   transform-origin: 50% 100%;
-  transform: translateX(calc(-50% + (var(--pointer-from-left) - 0.5) * 6px)) translateZ(0)
-    scaleY(calc(1 + (var(--pointer-from-top) - 0.5) * 0.02)) scaleX(calc(1 + (var(--pointer-from-left) - 0.5) * 0.01));
+  transform: translateX(calc(-50% + (var(--pointer-from-left) - 0.5) * 6px)) translateZ(0) scaleY(calc(1 + (var(--pointer-from-top) - 0.5) * 0.02)) scaleX(calc(1 + (var(--pointer-from-left) - 0.5) * 0.01));
   bottom: -1px;
   backface-visibility: hidden;
   will-change: transform;
@@ -278,13 +270,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(20, 20, 20, 0.7) 100%);
-  backdrop-filter: blur(20px);
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
-  border-radius: calc(max(0px, var(--card-radius) - var(--ui-inset) + var(--ui-radius-bias)));
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  /* Sharper corners for Swiss style */
   padding: 12px 14px;
   pointer-events: auto;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .pc-user-details {
@@ -296,62 +288,64 @@
 .pc-mini-avatar {
   width: 48px;
   height: 48px;
-  border-radius: 50%;
+  border-radius: 4px;
+  /* Sharper */
   overflow: hidden;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .pc-mini-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 4px;
 }
 
 .pc-user-text {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .pc-handle {
-  font-size: 13px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 1);
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.pc-status {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #a0a0a0;
   line-height: 1;
   letter-spacing: 0.02em;
 }
 
-.pc-status {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1;
-}
-
 .pc-contact-btn {
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
-  padding: 10px 16px;
-  font-size: 11px;
+  font-family: 'Inter', -apple-system, sans-serif;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  /* Sharper */
+  padding: 8px 16px;
+  font-size: 12px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 1);
-  background: rgba(255, 255, 255, 0.05);
+  color: #000000;
+  background: #ffffff;
   cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  transition: all 0.2s ease;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .pc-contact-btn:hover {
-  border-color: rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  background: #000000;
+  color: #ffffff;
 }
 
 .pc-content:not(.pc-avatar-content) {
@@ -359,11 +353,9 @@
   overflow: hidden;
   text-align: center;
   position: relative;
-  transform: translate3d(
-    calc(var(--pointer-from-left) * -6px + 3px),
-    calc(var(--pointer-from-top) * -6px + 3px),
-    0.1px
-  );
+  transform: translate3d(calc(var(--pointer-from-left) * -6px + 3px),
+      calc(var(--pointer-from-top) * -6px + 3px),
+      0.1px);
   z-index: 5;
   mix-blend-mode: luminosity;
 }
@@ -377,35 +369,29 @@
 }
 
 .pc-details h3 {
-  font-weight: 700;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-weight: 800;
   margin: 0;
   font-size: min(5svh, 3em);
-  background-image: linear-gradient(to bottom, #ffffff, #d0d0d0);
-  background-size: 1em 1.5em;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  letter-spacing: -0.01em;
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  color: #ffffff;
+  letter-spacing: -0.04em;
+  text-shadow: none;
+  filter: none;
 }
 
 .pc-details p {
+  font-family: 'Inter', -apple-system, sans-serif;
   font-weight: 600;
   position: relative;
-  top: -12px;
+  top: -8px;
   white-space: nowrap;
-  font-size: 13px;
+  font-size: 14px;
   margin: 0 auto;
   width: min-content;
-  background-image: linear-gradient(to bottom, #a8a8a8, #808080);
-  background-size: 1em 1.5em;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  letter-spacing: 0.08em;
+  color: #a0a0a0;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  filter: none;
 }
 
 @keyframes glow-bg {

@@ -1,7 +1,6 @@
 // TechLogoLoop.jsx
-import React from 'react';
+import { SiJavascript, SiNextdotjs, SiReact, SiTailwindcss } from 'react-icons/si';
 import LogoLoop from '../components/ui/LogoLoop/LogoLoop.jsx';
-import { SiReact, SiNextdotjs, SiJavascript, SiTailwindcss } from 'react-icons/si';
 
 const techLogos = [
   { node: <SiReact />, title: "React", href: "https://react.dev" },
