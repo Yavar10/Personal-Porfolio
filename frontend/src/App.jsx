@@ -108,43 +108,74 @@ const App = () => {
       )}
 
       <section className="hero-section">
-        <div className="hero-card-container">
-          <ProfileCard
-            avatarUrl="/meh.jpeg"
-            miniAvatarUrl="/meh.jpeg"
-            name="Mohd Yavar"
-            title="Software Engineer"
-            handle="Yavar10"
-            status="Available"
-          />
+        {/* Corner labels */}
+        <div className="corner-label top-left">MY</div>
+        <div className="corner-label top-right">BASED IN INDIA</div>
+        <div className="corner-label bottom-left">OPEN TO OPPORTUNITIES</div>
+        <div className="corner-label bottom-right">
+          <span>→</span> LET'S BUILD SOMETHING GREAT
         </div>
-        <div className="hero-info">
-          <div className="info-content">
-            <h2>Creative Developer</h2>
-            <p className="subtitle">Building experiences through code</p>
-            
-            <div className="info-sections">
-              <div className="info-block">
-                <h3>Focus</h3>
-                <ul>
-                  <li>Frontend Development</li>
-                  <li>UI/UX Design</li>
-                  <li>Web Performance</li>
-                </ul>
-              </div>
+
+        <div className="hero-content-wrapper">
+          <div className="hero-card-container">
+            <div className="card-column">
+              <ProfileCard
+                avatarUrl="/meh.jpeg"
+                miniAvatarUrl="/meh.jpeg"
               
-              <div className="info-block">
-                <h3>Stack</h3>
-                <ul>
-                  <li>React & TypeScript</li>
-                  <li>Tailwind CSS</li>
-                  <li>Node.js</li>
-                </ul>
-              </div>
+                name="Mohd Yavar"
+                title="SOFTWARE ENGINEER"
+                handle="Yavar10"
+                status="AVAILABLE"
+              />
               
-              <div className="info-block">
-                <h3>About</h3>
-                <p className="about-text">Passionate about creating beautiful, functional digital products with attention to detail and performance.</p>
+              {/* Elegant Philosophy & Links */}
+              <div className="card-footer-content">
+                <p className="philosophy-text">
+                  Bridging the gap between aesthetic design and robust engineering to build pixel-perfect, engaging digital experiences.
+                </p>
+                <div className="social-links">
+                  <a href="https://github.com/Yavar10" target="_blank" rel="noreferrer">GITHUB ↗</a>
+                  <a href="https://linkedin.com/in/mohd-yavar" target="_blank" rel="noreferrer">LINKEDIN ↗</a>
+                  <a href="https://x.com/yavar10_" target="_blank" rel="noreferrer">TWITTER ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="hero-info">
+            <div className="info-content">
+              <h2>Creative<br/>Developer</h2>
+              <p className="subtitle">Building experiences<br/>through code</p>
+              
+              <div className="info-sections">
+                <div className="info-block">
+                  <h3>FOCUS</h3>
+                  <div className="block-content">
+                    <ul>
+                      <li>Frontend Development</li>
+                      <li>UI/UX Design</li>
+                      <li>Web Performance</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div className="info-block">
+                  <h3>STACK</h3>
+                  <div className="block-content">
+                    <ul>
+                      <li>React & TypeScript</li>
+                      <li>Tailwind CSS</li>
+                      <li>Node.js</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div className="info-block">
+                  <h3>ABOUT</h3>
+                  <div className="block-content">
+                    <p className="about-text">Passionate about creating beautiful,<br/>functional digital products with<br/>attention to detail and performance.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
