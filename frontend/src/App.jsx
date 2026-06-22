@@ -73,39 +73,22 @@ const App = () => {
 
       <NavBar />
 
-      {/* Video only appears when ready */}
-      {isVideoReady && (
-        <div className="video-container">
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            playsInline
-            className="bg-video"
-          >
-            <source
-              src="/ChatGPT  The Intelligence Age - OpenAI (1080p, h264).mp4"
-              type="video/mp4"
-            />
-          </video>
-        </div>
-      )}
-
-      {/* Hidden preload video */}
-      {!isVideoReady && (
+      {/* Single video element - hidden while preloading, shown when ready */}
+      <div className="video-container" style={{ display: isVideoReady ? "block" : "none" }}>
         <video
           ref={videoRef}
+          autoPlay
           muted
           playsInline
           preload="auto"
-          style={{ display: "none" }}
+          className="bg-video"
         >
           <source
             src="/ChatGPT  The Intelligence Age - OpenAI (1080p, h264).mp4"
             type="video/mp4"
           />
         </video>
-      )}
+      </div>
 
       <section className="hero-section">
         {/* Corner labels */}
