@@ -105,7 +105,9 @@ const App = () => {
               <ProfileCard
                 avatarUrl="/meh.jpeg"
                 miniAvatarUrl="/meh.jpeg"
-              
+               onContactClick={() => {
+    window.location.href = "mailto:yavarahmad21@gmail.com";
+  }}
                 name="Mohd Yavar"
                 title="SOFTWARE ENGINEER"
                 handle="Yavar10"
